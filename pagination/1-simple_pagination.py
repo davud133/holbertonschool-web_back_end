@@ -30,10 +30,13 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            assert page > 0, "Page must be greater than 0"
+        assert page > 0, "Page must be greater than 0"
+        assert page_size > 0, "Page size must be greater than 0"
+        assert type(page) is int, "Page must be int"
+        assert type(page_size) is int, "Page size must be int"
+        pages = []
+        try:
+            pages = self.__dataset[index_range(page,page_size)]
+        except IndexError as e:
             pages = []
-            try:
-                pages = self.__dataset[index_range(page,page_size)]
-            except IndexError as e:
-                pages = []
-            return pages
+        return pages
