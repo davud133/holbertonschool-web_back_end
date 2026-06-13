@@ -17,6 +17,7 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        """intilizes the dataset"""
         self.__dataset = None
 
     def dataset(self) -> List[List]:
@@ -31,7 +32,8 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """page getter function"""
+        """page getter function for getting the page datas"""
+
         assert isinstance(page, int), "Page must be an integer"
         assert isinstance(page_size, int), "Page size must be an integer"
         assert page > 0, "Page must be greater than 0"
