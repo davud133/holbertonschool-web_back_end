@@ -59,7 +59,8 @@ class Server:
         start, end = index_range(page, page_size)
         pages = dataset[start:end]
         return pages
-    def get_hyper(self, page = 1, page_size = 1):
+
+    def get_hyper(self, page=1, page_size=1):
         """getting hyper function"""
 
         dataset = self.dataset()
