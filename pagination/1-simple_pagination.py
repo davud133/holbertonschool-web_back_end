@@ -32,8 +32,8 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         assert page > 0, "Page must be greater than 0"
         assert page_size > 0, "Page size must be greater than 0"
-        assert type(page) is int, "Page must be int"
-        assert type(page_size) is int, "Page size must be int"
+        assert isinstance(page, int), "Page must be an integer"
+        assert isinstance(page_size, int), "Page size must be an integer"
         pages = []
         try:
             pages = self.__dataset[index_range(page,page_size)]
