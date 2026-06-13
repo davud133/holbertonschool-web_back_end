@@ -9,11 +9,9 @@ from typing import List
 def index_range(page, page_size):
     """
     Calculates the start and end index for a given page.
-    
     Args:
         page: The current page number.
         page_size: The number of items on each page.
-        
     Returns:
         A tuple of (start_index, end_index).
     """
@@ -22,7 +20,6 @@ def index_range(page, page_size):
 
 class Server:
     """Handles loading and paginating the popular baby names database."""
-    
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
@@ -32,7 +29,6 @@ class Server:
     def dataset(self) -> List[List]:
         """
         Loads and caches the dataset from the CSV file.
-        
         Returns:
             The dataset rows as a list of lists (excluding the header).
         """
@@ -47,11 +43,9 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
         Retrieves a specific page of data.
-        
         Args:
             page: The page number to get (must be > 0).
             page_size: The number of records per page (must be > 0).
-            
         Returns:
             A list of rows representing the requested page.
         """
