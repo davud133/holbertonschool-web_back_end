@@ -59,23 +59,24 @@ class Server:
         start, end = index_range(page, page_size)
         pages = dataset[start:end]
         return pages
-    def get_hyper(page = 1, page_size = 1):
+    def get_hyper(self, page = 1, page_size = 1):
         """getting hyper function"""
 
         dataset = self.dataset()
-        total_pages = len(dataset) / page_size
+        total_pages = math.ceil(len(dataset) / page_size)
         next = None
         prev = None
         if page < total_pages:
             next = page + 1
         if page > 1:
             prev = page - 1
+        data = self.get_page(page, page_size)
         datas = {
-            "page_size": page_size,
+            "page_size": len(data),
             "page": page,
-            "data": self.get_page(page, page_size),
+            "data": data,
             "next_page": next,
-            "perv_page": prev,
+            "prev_page": prev,
             "total_pages": total_pages
             }
         return datas
