@@ -57,3 +57,4 @@ class Server:
             "page_size": len(page_data),
             "next_index": index
         }
+        return datas
