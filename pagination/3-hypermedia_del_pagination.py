@@ -50,7 +50,7 @@ class Server:
         while len(page_data) != page_size:
             if index in data:
                 page_data.append(data[index])
-            index++
+            index+=1
         datas = {
             "index": current_index,
             "data": page_data,
