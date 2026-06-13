@@ -75,7 +75,7 @@ class Server:
             "page": page,
             "data": self.get_page(page, page_size),
             "next_page": next,
-            "perv_page": prev
+            "perv_page": prev,
             "total_pages": total_pages
             }
         return datas
