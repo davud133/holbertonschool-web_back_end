@@ -2,7 +2,7 @@
 import csv
 import math
 from typing import List
-""" Simple pagination"""
+""" Simple pagination page getting"""
 
 
 def index_range(page, page_size):
@@ -31,6 +31,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """page getter function"""
         assert isinstance(page, int), "Page must be an integer"
         assert isinstance(page_size, int), "Page size must be an integer"
         assert page > 0, "Page must be greater than 0"
