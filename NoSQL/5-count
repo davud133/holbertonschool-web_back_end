@@ -1,2 +1,2 @@
 // counting
-db.school.countDocuments({})
+db.school.find().count()
