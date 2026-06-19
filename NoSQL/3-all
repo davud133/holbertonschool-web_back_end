@@ -1,0 +1,2 @@
+// printing all documents
+db.school.find()
