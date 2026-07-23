@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv",
+    "lint": "node ./node_modules/eslint/bin/eslint.js",
+    "check-lint": "node ./node_modules/eslint/bin/eslint.js [0-9]*.js full_server",
+    "test": "./node_modules/mocha/bin/mocha --require babel-register --exit",
+    "full-test": "node ./node_modules/eslint/bin/eslint.js . && npm test"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
